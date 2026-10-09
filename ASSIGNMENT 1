@@ -1,1 +1,31 @@
+//BASIC CODES
 
+#include<stdio.h>
+int main()
+{
+printf("Hello World!");
+
+return 0;
+
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter the 1st number: ");
+    scanf("%d", &a);
+
+    printf("Enter the 2nd number: ");
+    scanf("%d", &b);
+
+    if (a >= b)
+        printf("a is the larger number");
+    else
+        printf("b is the greater number");
+    return 0;
+}
