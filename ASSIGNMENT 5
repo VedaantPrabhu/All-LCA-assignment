@@ -1,1 +1,92 @@
 
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str1[50], str2[50], temp;
+    int choice, i, cmp;
+
+    printf("\n1. Length of String");
+    printf("\n2. Copy String");
+    printf("\n3. Concatenate String");
+    printf("\n4. Compare Strings");
+    printf("\n5. Reverse String");
+    printf("\n6. Exit");
+
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            printf("Enter a string: ");
+            scanf("%s", str1);
+
+            printf("Length = %d", strlen(str1));
+            break;
+
+        case 2:
+            printf("Enter a string: ");
+            scanf("%s", str1);
+
+            strcpy(str2, str1);
+
+            printf("Copied string = %s", str2);
+            break;
+
+        case 3:
+            printf("Enter first string: ");
+            scanf("%s", str1);
+
+            printf("Enter second string: ");
+            scanf("%s", str2);
+
+            strcat(str1, str2);
+
+            printf("Concatenated string = %s", str1);
+            break;
+
+        case 4:
+            printf("Enter first string: ");
+            scanf("%s", str1);
+
+            printf("Enter second string: ");
+            scanf("%s", str2);
+
+            cmp = strcmp(str1, str2);
+
+            if(cmp == 0)
+                printf("Strings are equal");
+            else if(cmp < 0)
+                printf("First string is smaller");
+            else
+                printf("First string is greater");
+            break;
+
+        case 5:
+            printf("Enter a string: ");
+            scanf("%s", str1);
+
+            i = strlen(str1) - 1;
+
+            for(int j = 0; j < i; j++, i--)
+            {
+                temp = str1[j];
+                str1[j] = str1[i];
+                str1[i] = temp;
+            }
+
+            printf("Reversed string = %s", str1);
+            break;
+
+        case 6:
+            printf("Exit");
+            break;
+
+        default:
+            printf("Invalid choice");
+    }
+
+    return 0;
+}
