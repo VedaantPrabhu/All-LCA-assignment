@@ -1,23 +1,53 @@
 // STRING and matrix
 
 
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int i,j,k;
-    int a[2][2][3] = { {{1,2,3}, {4,5,6}},
-                       {{7,8,9}, {10,11,12}} };
-     for(i=0; i<2; i++)
-   {
-     for(j=0; j<2; j++)
-         {
-        for(k=0; k<3; k++)
-            {
-       printf("%d",a[i][j][k]);
-            }
-         }
-   } 
-                
-   return 0;      
-    
+    int A[2][3], B[2][3], C[2][3];
+    int i, j;
+
+    printf("Enter first matrix elements:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter second matrix elements:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Addition of two matrices
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            C[i][j] = A[i][j] + B[i][j];
+        }
+    }
+
+    printf("Addition of two matrices is:\n");
+
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 3; j++)
+        {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
